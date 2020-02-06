@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>조홍철의 포트폴리오</title>
+  <link rel="SHORTCUT ICON" href="img/programmer.png"/>
+
+  <!-- Font Awesome Icons -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
+
+  <!-- Plugin CSS -->
+  <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+
+  <!-- Theme CSS - Includes Bootstrap -->
+  <link href="css/creative.min.css" rel="stylesheet">
+<style type="text/css">
+.typing-txt{display: none;}
+.typeing-txt ul{list-style:none;}
+.typing {  
+  display: inline-block; 
+  animation-name: cursor; 
+  animation-duration: 0.3s; 
+  animation-iteration-count: infinite; 
+} 
+@keyframes cursor{ 
+  0%{border-right: 1px solid #fff} 
+  50%{border-right: 1px solid #000} 
+  100%{border-right: 1px solid #fff} 
+}
+
+
+
+.Project{
+  
+  background:#6CDAB2;
+border-top: 2px solid #6CDAB2;
+    height: 100%;
+    width: 100%;
+ border-bottom: 2px solid white;
+}
+.Project_title{
+    text-align: center;
+    color: white;
+    margin-bottom: 3em;
+}
+.Project_hedding{
+    position: relative;
+    display: inline-block;
+    font-size: 2.4em;
+    font-weight:400;
+    margin:30px 0;
+}
+.Project_hedding::after{
+    position: absolute;
+    content: "";
+    top:100%;
+    height:2px;
+    width: 50px;
+    left: 50%;
+    right: 0;
+    margin:0 auto;
+    background:rgb(248,140,101);
+}
+
+
+
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC:500');
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:400');
+@import url('https://fonts.googleapis.com/css?family=Gothic+A1:200');
+.Row{
+    display: flex;
+    flex-wrap: wrap;
+  
+}
+.Box{
+    height: 360px;
+    
+    width: 100%;
+    max-width: 80vw;
+    border-radius: 4px;
+    margin:0 auto 30px;
+    background: #ffffff;
+    box-shadow: 0 3px 6px rgba(0,0,0,.2), 0 3px 6px rgba(0,0,0,.2);
+}
+.Box_image{
+    float: left;
+    width:  35%;
+    height:360px;
+    margin-right:2rem;
+}
+.image{
+   width: 100%;
+   height:360px;
+}
+.Box_info{
+    font-family: 'Gothic A1', sans-serif;
+    padding:14px;
+}
+
+.Box_content{
+    font-size: 1.1em;
+    
+}
+.name{
+    font-weight:500;
+    font-size: 1.3em;
+}
+.Box_ul{
+    list-style: none;
+  
+}
+.Box_li{
+    display: inline-block;
+    cursor: pointer;
+}
+.icon_image{
+    width: 25px;
+    height:30px;
+}
+@media (max-width: 576px){
+    .Row{
+        font-size: 10px;
+        width: 100%;
+    }
+    .Box{
+        margin-right: 3%;
+        margin-left: 3%;
+        width: 100%;
+        max-width: 100%;
+        height:50%;
+        display: grid;
+    }
+    .Box_image{
+        float: left;
+        height:59%;
+     
+        width: 100%;
+    }
+    .image{
+       width: 100%;
+       height:240px;
+    }
+    .Box_title{
+        font-family: 'Noto Sans TC', sans-serif;
+        font-weight:500;
+        font-size:14px;
+        text-align: center;
+    }
+    
+    .banner_area .banner_inner {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    min-height: 485px;
+    background: url(img/banner/common-banner.png) no-repeat right bottom;
+    background-size: 90% 85%;
+    width: 98%;
+    z-index: 1;
+	}
+	
+}
+</style>
+
+<script type="text/javascript">
+$(document).ready(function() {
+	var typingBool = false; 
+	var typingIdx=0; 
+	var liIndex = 0;
+	var liLength = $(".typing-txt>ul>li").length;
+
+	// 타이핑될 텍스트를 가져온다 
+	var typingTxt = $(".typing-txt>ul>li").eq(liIndex).text(); 
+	typingTxt=typingTxt.split(""); // 한글자씩 자른다. 
+	if(typingBool==false){ // 타이핑이 진행되지 않았다면 
+	    typingBool=true; 
+	    var tyInt = setInterval(typing,280); // 반복동작 
+	} 
+	     
+	function typing(){ 
+	  if(typingIdx<typingTxt.length){ // 타이핑될 텍스트 길이만큼 반복 
+	     $(".typing").append(typingTxt[typingIdx]); // 한글자씩 이어준다. 
+	     typingIdx++; 
+	   } else{ //한문장이끝나면
+	     //다음문장으로.. 마지막문장이면 다시 첫번째 문장으로 
+	     if(liIndex>=liLength-1){
+	       liIndex=0;
+	     }else{
+	       liIndex++; 
+	     }
+	     
+	     //다음문장을 타이핑하기위한 셋팅
+	        typingIdx=0;
+	        typingBool = false; 
+	        typingTxt = $(".typing-txt>ul>li").eq(liIndex).text(); 
+	       
+	     //다음문장 타이핑전 1초 쉰다
+	         clearInterval(tyInt);
+	         setTimeout(function(){
+	            $(".typing").html('');
+	           tyInt = setInterval(typing,280);
+	         },1000);
+	    } 
+	}  
+});
+</script>
+
+</head>
+
+<body id="page-top">
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger" href="#page-top">CHong777</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto my-2 my-lg-0">
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#services">Final Project</a>
+          </li>
+         <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#portfolio">StoryBoard</a>
+          </li>
+          <li class="nav-item">
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- About Section -->
+  <section class="page-section bg-primary" id="about" style = "background: linear-gradient(to bottom,rgba(92,77,66,.8) 0,rgba(92,77,66,.8) 100%),url(img/computerBg.jpg);
+    background-position: center;">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 text-center">
+        </div>
+      </div>
+    </div>
+  </section>
+  
+<div id = "background" style="background: url(img/body-bg.png) no-repeat center;">
+
+  <!-- Services Section -->
+  <section class="page-section" id="services" style="padding-top: 10px;">
+   <div style="padding-bottom:5%">
+   	 <hr class="divider my-4">
+      <h2 class="text-center mt-0">Final Project</h2>
+      <hr class="divider my-4">
+   </div>
+     <div class="container" style="padding-bottom: 3%;">
+            <div class="portfolio_details_inner">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="left_img">
+                            <img class="img-fluid" src="img/portfolio/thumbnails/CultureSquare.png" alt="">
+                        </div>
+                    </div>
+                    <div class="offset-lg-1 col-lg-5">
+                        <div class="portfolio_right_text mt-30">
+                            <h4 class="text-uppercase">Culture Square</h4>
+                            <p>
+                            	 예술인과 관객들의 소통공간
+                            </p>
+                            <ul class="list">
+                                <li><span>프로젝트 명</span>: Culture Square</li>
+                                <li><span>수행기간</span>: 2019년 12월 10일 ~ 2020년 01월 16일</li>
+                                <li><span>개발 목표</span>: 국민들의 문화예술행사 관람률이 계속해서 증가하는 시대에서 예술인들은 자신의 일정을 홍보하고, 관객들은 예술인을 후원할 수 있도록 함으로써 예술인과 관객들이 소통할 수 있는 웹 페이지를 만드는 것을 목표로 한다.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    <div class="container" style="padding-bottom:20px">
+			<h3 class="text-heading title_color">개발환경</h3>
+			<table class="table table-striped">
+				 <thead>
+				   <tr>
+				      <th>구분</th>
+				      <th style ="padding-left: 35px;">항목</th>
+				   </tr>
+				 </thead>
+				 <tbody>
+				   <tr>
+				      <td style ="vertical-align: middle;">O/S</td>
+				      <td>
+				    	<ul style="list-style-type:square;">
+				      		<li>Windows10</li>
+				     	 </ul>
+				      </td>
+				   </tr>
+				   <tr>
+				      <td style ="vertical-align: middle;">개발도구</td>
+				      <td>
+				    	<ul style="list-style-type:square;">
+				      		<li>Eclipse</li>
+				     	 </ul>
+				      </td>
+				   </tr>
+				   <tr>
+				      <td style ="vertical-align: middle;">DBMS</td>
+				      <td>
+				      <ul style="list-style-type:square;">
+				      	<li>Oracle 11g Express Edition Release 11.2.0</li>
+				      </ul>
+				      <ul style="list-style-type:square;">
+				      	<li>SQL Developer</li>
+				      </ul>
+				      </td>
+				   </tr>
+				   <tr>
+				      <td style ="vertical-align: middle;">Server</td>
+				      <td>
+				    	<ul style="list-style-type:square;">
+				      		<li>Apache Tomcat 9.0.27</li>
+				     	 </ul>
+				      </td>
+				   </tr>
+				   <tr>
+				      <td style ="vertical-align: middle;">프레임워크</td>
+				      <td>
+				    	<ul style="list-style-type:square;">
+				      		<li>Spring Framework</li>
+				     	 </ul>
+				    	<ul style="list-style-type:square;">
+				      		<li>MyBatis Fraemwork</li>
+				     	 </ul>				     	 
+				      </td>
+				   </tr>
+				   <tr>
+				      <td style ="vertical-align: middle;">Spring-version</td>
+				      <td>
+				    	<ul style="list-style-type:square;">
+				      		<li>Spring Tools 3(Standalone Edition) 3.9.10 RELEASE</li>
+				     	 </ul>
+				      </td>
+				   </tr>				   
+				   <tr>
+				      <td style ="vertical-align: middle;">Language</td>
+				      <td>
+				    	<ul style="list-style-type:square;">
+				      		<li>Java, HTML5, CSS, Javascript, jQuery</li>
+				     	 </ul>
+				      </td>
+				   </tr>
+				   <tr>
+				      <td style ="vertical-align: middle;">Design tool</td>
+				      <td>
+				    	<ul style="list-style-type:square;">
+				      		<li>Bootstrap</li>
+				     	 </ul>
+				      </td>
+				   </tr>
+				   <tr>
+				      <td style ="vertical-align: middle;">형상/버전관리</td>
+				      <td>
+				    	<ul style="list-style-type:square;">
+				      		<li>Github</li>
+				     	 </ul>
+						<ul style="list-style-type:square;">
+				      		<li>Eclipse-git</li>
+				     	</ul>				     	 
+				      </td>
+				   </tr>
+				 </tbody> 
+			</table>				
+    </div><!-- CONTAINER -->
+    
+       <div class="container" style="padding-bottom:20px">
+			<h3 class="text-heading title_color">구현기능</h3>
+			<table class="table table-striped">
+				 <thead>
+				   <tr>
+				      <th>구분</th>
+				      <th style ="padding-left: 35px;">항목</th>
+				   </tr>
+				 </thead>
+				 <tbody>
+				   <tr>
+				      <td style ="vertical-align: middle;">HTTPS 프로토콜 설정</td>
+				      <td>
+				    	<ul style="list-style-type:square;">
+				      		<li>HTTP 프로토콜에 SSL 추가</li>
+				     	 </ul>
+				      </td>
+				   </tr>
+				   <tr>
+				      <td style ="vertical-align: middle;">회원 서비스</td>
+				      <td>
+				    	<ul style="list-style-type:square;">
+				      		<li>로그인/로그아웃</li>
+				      		<li>회원가입(DB 암호화)</li>
+				      		<li>소셜 로그인(구글, 카카오, 네이버)</li>
+				      		<li>ID/PW 찾기</li>
+				      		<li>아이디 저장</li>
+				     	 </ul>
+				      </td>
+				   </tr>
+				   <tr>
+				      <td style ="vertical-align: middle;">게시판(자유/예술/PR)</td>
+				      <td>
+				    	<ul style="list-style-type:square;">
+				      		<li>게시글 작성, 수정, 삭제, 보기, 좋아요</li>
+				      		<li>댓글 작성, 수정, 삭제, 보기, 좋아요</li>
+				      		<li>답글 작성, 수정, 삭제, 보기</li>
+				      		<li>파일 업로드/다운로드</li>
+				      		<li>대표 이미지 출력</li>
+				      		<li>위치정보(지도)</li>
+				      		<li>후원</li>
+				     	 </ul>
+				      </td>
+				   </tr>
+				   <tr>
+				      <td style ="vertical-align: middle;">크롤링</td>
+				      <td>
+				    	<ul style="list-style-type:square;">
+				      		<li>공연 정보 불러오기</li>
+				     	 </ul>
+				      </td>
+				   </tr>
+				   <tr>
+				   <tr>
+				      <td style ="vertical-align: middle;">알림</td>
+				      <td>
+				    	<ul style="list-style-type:square;">
+				      		<li>자신이 쓴 게시글의 댓글/좋아요/후원/팔로우 알림</li>
+				      		<li>자신이 쓴 댓글의 답글 알림</li>
+				     	 </ul>
+				      </td>
+				   </tr>
+				  <tr>
+				      <td style ="vertical-align: middle;">날씨</td>
+				      <td>
+				    	<ul style="list-style-type:square;">
+				      		<li>현재 서울의 실시간 날씨정보 출력</li>
+				     	 </ul>
+				      </td>
+				   </tr>
+				   <tr>				   
+				      <td style ="vertical-align: middle;">마이페이지</td>
+				      <td>
+				    	<ul style="list-style-type:square;">
+				      		<li>내 정보 수정</li>
+				      		<li>비밀번호/ 닉네임/ 프로필 사진 변경</li>
+				      		<li>내가 쓴 글/ 댓글/ 좋아요 글 보기</li>
+				      		<li>후원 내역 보기</li>
+				      		<li>팔로우한 예술인 보기</li>
+				      		<li>탈퇴</li>
+				      		<li>예술인 등업 신청</li>
+				     	 </ul>
+				      </td>
+				   </tr>
+				   <tr>
+				      <td style ="vertical-align: middle;">관리자 페이지</td>
+				      <td>
+				    	<ul style="list-style-type:square;">
+				      		<li>게시판 보기/ 수정/ 삭제/ 검색</li>
+				      		<li>회원 정보 보기</li>
+				      		<li>예술인 신청 회원 승인</li>
+				      		<li>예술인 회원 강등</li>
+				     	 </ul>
+				      </td>
+				   </tr>
+				 </tbody> 
+			</table>				
+    </div><!-- CONTAINER -->
+    
+    <div class="container" style="padding-bottom:45px">
+			<h3 class="text-heading title_color">DB 설계</h3>
+			<img style = "width: 100%;" src="img/cultureDB.png"/>
+    </div><!-- CONTAINER -->
+    <div class="container" style="padding-bottom:20px">
+			<h3 class="text-heading title_color">담당 역할</h3>
+			<table class="table table-striped">
+				 <thead>
+				   <tr>
+				      <th>구분</th>
+				      <th style ="padding-left: 35px;">항목</th>
+				   </tr>
+				 </thead>
+				 <tbody>
+				   <tr>
+				      <td style ="vertical-align: middle;">HTTPS 프로토콜 설정</td>
+				      <td>
+				      <ul style="list-style-type:square;">
+				      	<li>HTTP 프로토콜에 SSL 추가</li>
+				      </ul>
+				      </td>
+				   </tr>
+				   <tr>
+				      <td style ="vertical-align: middle;">소셜 로그인</td>
+				      <td>
+				      <ul style="list-style-type:square;">
+				      	<li>구글</li>
+				      </ul>
+				      <ul style="list-style-type:square;">
+				      	<li>네이버</li>
+				      </ul>
+				      <ul style="list-style-type:square;">
+				      	<li>카카오</li>
+				      </ul>      
+				      </td>
+				   </tr>
+				   <tr>
+				      <td style ="vertical-align: middle;">날씨</td>
+				      <td>
+				      <ul style="list-style-type:square;">
+				      	<li>서울의 실시간 날씨 정보 출력</li>
+				      </ul>
+				      </td>
+				   </tr>
+				   <tr>
+				      <td style ="vertical-align: middle;">후원</td>
+				      <td>
+				      <ul style="list-style-type:square;">
+				      	<li>카카오페이를 이용한 후원 기능</li>
+				      </ul>
+				      </td>
+				   </tr>
+				   <tr>
+				      <td style ="vertical-align: middle;">알림</td>
+				      <td>
+				      <ul style="list-style-type:square;">
+				      	<li>실시간 알림 기능</li>
+				      </ul>
+				      </td>
+				   </tr>
+				   <tr>
+				      <td style ="vertical-align: middle;">게시판</td>
+				      <td>
+				      <ul style="list-style-type:square;">
+				      	<li>PR 게시판 기능 구현</li>
+				      </ul>
+				      </td>
+				   </tr>				   				   
+				 </tbody> 
+			</table>				
+    </div><!-- CONTAINER -->
+    
+    <div class="container" style="padding-bottom:20px">
+			<h3 class="text-heading title_color">참여도/ 기여도</h3>
+			<table class="table table-striped">
+				 <thead>
+				   <tr>
+				      <th>구분</th>
+				      <th style ="padding-left: 35px;">항목</th>
+				   </tr>
+				 </thead>
+				 <tbody>
+				   <tr>
+				      <td style ="vertical-align: middle;">참여도 : 100% </td>
+				      <td>
+				      <ul style="list-style-type:square;">
+				      	<li>프로젝트 설계 기획 구현 모든 과정 참여</li>
+				      </ul>
+				      </td>
+				   </tr>
+				   <tr>
+				      <td style ="vertical-align: middle;">기여도 : 25%(팀 구성원: 6명)</td>
+				      <td>
+				      <ul style="list-style-type:square;">
+				      	<li>HTTPS 프로토콜 설정, 소셜 로그인 구현, 날씨/ 후원/ 알림 기능 구현</li>
+				      </ul>
+				      <ul style="list-style-type:square;">
+				      	<li>PR 게시판 기능 구현</li>
+				      </ul>
+				      </td>
+				   </tr>
+				 </tbody> 
+			</table>				
+    </div><!-- CONTAINER -->
+  <div class="container">
+			<h3 class="text-heading title_color">참여소감</h3>
+			<p class="sample-text">
+				세미프로젝트에 없는 기능들을 많이 구현한 것 같아 만족스럽습니다.<br>HTTPS 프로토콜을 적용해서 서버와 클라이언트의 데이터가 암호화되어 통신할 수 있도록 하였고, 소셜 로그인 구현, 대표 이미지 게시판과 다중 파일 업로드, 날씨 정보 API를 사용하여 실시간 날씨를 불러오며, 카카오페이를 이용한 결제 시스템까지 구현을 해보았습니다.<br>새로운 팀원들과 세미 프로젝트에서는 사용하지 않은 스프링 프레임워크와 마이바티스 프레임워크를 사용하여 작업하였기 때문에, 기술적인 부분과 커뮤니케이션 부분에서 다시 한 번 성장할 수 있었다는 생각이 들었습니다.
+				
+			</p>
+    </div><!-- CONTAINER -->
+  </section>
+  
+    <!-- Portfolio Section -->
+  <section id="portfolio">
+     <hr class="divider my-4">
+      <h2 class="text-center mt-0">StoryBoard</h2>
+       <hr class="divider my-4">
+
+    <div class="container-fluid p-0">
+      <div class="row no-gutters">
+        <div class="col-lg-4 col-sm-6">
+          <a class="portfolio-box" href="img/storyboard/fullsize/ssl.png">
+            <img style = "height: 342px;" class="img-fluid" src="img/storyboard/thumbnails/ssl.png" alt="">
+            <div class="portfolio-box-caption">
+              <div class="project-category text-white-50">
+                	HTTPS 프로토콜 설정
+              </div>
+              <div class="project-name">
+                	SSL 인증서
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-lg-4 col-sm-6">
+          <a class="portfolio-box" href="img/storyboard/fullsize/googlelogin.png">
+            <img style = "height: 342px;" class="img-fluid" src="img/storyboard/thumbnails/googlelogin.png" alt="">
+            <div class="portfolio-box-caption">
+              <div class="project-category text-white-50">
+               	 소셜 로그인
+              </div>
+              <div class="project-name">
+                	구글 로그인
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-lg-4 col-sm-6">
+          <a class="portfolio-box" href="img/storyboard/fullsize/googlecheck.png">
+            <img style = "height: 342px;"class="img-fluid" src="img/storyboard/thumbnails/googlecheck.png" alt="">
+            <div class="portfolio-box-caption">
+              <div class="project-category text-white-50">
+                	소셜 로그인
+              </div>
+              <div class="project-name">
+              		  닉네임 중복 검사
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-lg-4 col-sm-6">
+          <a class="portfolio-box" href="img/storyboard/fullsize/naverlogin.png">
+            <img style = "width:506.39px; height: 342px;"class="img-fluid" src="img/storyboard/thumbnails/naverlogin.png" alt="">
+            <div class="portfolio-box-caption">
+              <div class="project-category text-white-50">
+             	   소셜 로그인
+              </div>
+              <div class="project-name">
+              	  네이버 로그인
+              </div>
+            </div>
+          </a>
+        </div>
+        
+        <div class="col-lg-4 col-sm-6">
+          <a class="portfolio-box" href="img/storyboard/fullsize/navercheck.png">
+            <img style = "width:506.39px; height: 342px;"class="img-fluid" src="img/storyboard/thumbnails/navercheck.png" alt="">
+            <div class="portfolio-box-caption">
+              <div class="project-category text-white-50">
+             	   소셜 로그인
+              </div>
+              <div class="project-name">
+              	  닉네임 중복 검사
+              </div>
+            </div>
+          </a>
+        </div>
+        
+       <div class="col-lg-4 col-sm-6">
+          <a class="portfolio-box" href="img/storyboard/fullsize/kakaologin.png">
+            <img style = "width:506.39px; height: 342px;"class="img-fluid" src="img/storyboard/thumbnails/kakaologin.png" alt="">
+            <div class="portfolio-box-caption">
+              <div class="project-category text-white-50">
+             	   소셜 로그인
+              </div>
+              <div class="project-name">
+              	  카카오 로그인
+              </div>
+            </div>
+          </a>
+        </div>
+        
+        <div class="col-lg-4 col-sm-6">
+          <a class="portfolio-box" href="img/storyboard/fullsize/kakaocheck.png">
+            <img style = "width:506.39px; height: 342px;"class="img-fluid" src="img/storyboard/thumbnails/kakaocheck.png" alt="">
+            <div class="portfolio-box-caption">
+              <div class="project-category text-white-50">
+             	   소셜 로그인
+              </div>
+              <div class="project-name">
+              	  닉네임 중복 검사
+              </div>
+            </div>
+          </a>
+        </div>        
+
+        <div class="col-lg-4 col-sm-6">
+          <a class="portfolio-box" href="img/storyboard/fullsize/weather.png">
+            <img style = "width:506.39px; height: 342px;"class="img-fluid" src="img/storyboard/thumbnails/weather.png" alt="">
+            <div class="portfolio-box-caption">
+              <div class="project-category text-white-50">
+             	   날씨
+              </div>
+              <div class="project-name">
+              	  서울의 실시간 날씨 정보 출력
+              </div>
+            </div>
+          </a>
+        </div>   
+        
+        <div class="col-lg-4 col-sm-6">
+          <a class="portfolio-box" href="img/storyboard/fullsize/pay.png">
+            <img style = "width:506.39px; height: 342px;"class="img-fluid" src="img/storyboard/thumbnails/pay.png" alt="">
+            <div class="portfolio-box-caption">
+              <div class="project-category text-white-50">
+             	   후원
+              </div>
+              <div class="project-name">
+              	  후원 금액 선택
+              </div>
+            </div>
+          </a>
+        </div>  
+                
+        <div class="col-lg-4 col-sm-6">
+          <a class="portfolio-box" href="img/storyboard/fullsize/payerror.png">
+            <img style = "width:506.39px; height: 342px;"class="img-fluid" src="img/storyboard/thumbnails/payerror.png" alt="">
+            <div class="portfolio-box-caption">
+              <div class="project-category text-white-50">
+             	   후원
+              </div>
+              <div class="project-name">
+              	  후원 오류
+              </div>
+            </div>
+          </a>
+        </div>  
+
+        <div class="col-lg-4 col-sm-6">
+          <a class="portfolio-box" href="img/storyboard/fullsize/kakaopay.png">
+            <img style = "width:506.39px; height: 342px;"class="img-fluid" src="img/storyboard/thumbnails/kakaopay.png" alt="">
+            <div class="portfolio-box-caption">
+              <div class="project-category text-white-50">
+             	   후원
+              </div>
+              <div class="project-name">
+              	  카카오페이
+              </div>
+            </div>
+          </a>
+        </div>  
+
+        <div class="col-lg-4 col-sm-6">
+          <a class="portfolio-box" href="img/storyboard/fullsize/payend.png">
+            <img style = "width:506.39px; height: 342px;"class="img-fluid" src="img/storyboard/thumbnails/payend.png" alt="">
+            <div class="portfolio-box-caption">
+              <div class="project-category text-white-50">
+             	   후원
+              </div>
+              <div class="project-name">
+              	  후원 완료
+              </div>
+            </div>
+          </a>
+        </div>  
+
+        <div class="col-lg-4 col-sm-6">
+          <a class="portfolio-box" href="img/storyboard/fullsize/prlist.png">
+            <img style = "width:506.39px; height: 342px;"class="img-fluid" src="img/storyboard/thumbnails/prlist.png" alt="">
+            <div class="portfolio-box-caption">
+              <div class="project-category text-white-50">
+             	   PR 게시판
+              </div>
+              <div class="project-name">
+              	  게시판 리스트
+              </div>
+            </div>
+          </a>
+        </div>  
+
+        <div class="col-lg-4 col-sm-6">
+          <a class="portfolio-box" href="img/storyboard/fullsize/prerror.png">
+            <img style = "width:506.39px; height: 342px;"class="img-fluid" src="img/storyboard/thumbnails/prerror.png" alt="">
+            <div class="portfolio-box-caption">
+              <div class="project-category text-white-50">
+             	   PR 게시판
+              </div>
+              <div class="project-name">
+              	  하루 작성 게시글 제한
+              </div>
+            </div>
+          </a>
+        </div>  
+
+        <div class="col-lg-4 col-sm-6">
+          <a class="portfolio-box" href="img/storyboard/fullsize/prwrite.png">
+            <img style = "width:506.39px; height: 342px;"class="img-fluid" src="img/storyboard/thumbnails/prwrite.png" alt="">
+            <div class="portfolio-box-caption">
+              <div class="project-category text-white-50">
+             	   PR 게시판
+              </div>
+              <div class="project-name">
+              	  게시글 작성
+              </div>
+            </div>
+          </a>
+        </div>   
+
+        <div class="col-lg-4 col-sm-6">
+          <a class="portfolio-box" href="img/storyboard/fullsize/prupdate.png">
+            <img style = "width:506.39px; height: 342px;"class="img-fluid" src="img/storyboard/thumbnails/prupdate.png" alt="">
+            <div class="portfolio-box-caption">
+              <div class="project-category text-white-50">
+             	   PR 게시판
+              </div>
+              <div class="project-name">
+              	  게시글 수정
+              </div>
+            </div>
+          </a>
+        </div>  
+       
+        <div class="col-lg-4 col-sm-6">
+          <a class="portfolio-box" href="img/storyboard/fullsize/prdelete.png">
+            <img style = "width:506.39px; height: 342px;"class="img-fluid" src="img/storyboard/thumbnails/prdelete.png" alt="">
+            <div class="portfolio-box-caption">
+              <div class="project-category text-white-50">
+             	   PR 게시판
+              </div>
+              <div class="project-name">
+              	  게시글 삭제
+              </div>
+            </div>
+          </a>
+        </div>      
+           
+        <div class="col-lg-4 col-sm-6">
+          <a class="portfolio-box" href="img/storyboard/fullsize/prdeatil.png">
+            <img style = "width:506.39px; height: 342px;"class="img-fluid" src="img/storyboard/thumbnails/prdeatil.png" alt="">
+            <div class="portfolio-box-caption">
+              <div class="project-category text-white-50">
+             	   PR 게시판
+              </div>
+              <div class="project-name">
+              	  게시글 상세보기
+              </div>
+            </div>
+          </a>
+        </div>          
+                   
+        <div class="col-lg-4 col-sm-6">
+          <a class="portfolio-box" href="img/storyboard/fullsize/replyupdate.png">
+            <img style = "width:506.39px; height: 342px;"class="img-fluid" src="img/storyboard/thumbnails/replyupdate.png" alt="">
+            <div class="portfolio-box-caption">
+              <div class="project-category text-white-50">
+             	   PR 게시판
+              </div>
+              <div class="project-name">
+              	  댓글 수정
+              </div>
+            </div>
+          </a>
+        </div>          
+ 
+        <div class="col-lg-4 col-sm-6">
+          <a class="portfolio-box" href="img/storyboard/fullsize/replydelete.png">
+            <img style = "width:506.39px; height: 342px;"class="img-fluid" src="img/storyboard/thumbnails/replydelete.png" alt="">
+            <div class="portfolio-box-caption">
+              <div class="project-category text-white-50">
+             	   PR 게시판
+              </div>
+              <div class="project-name">
+              	  댓글 삭제
+              </div>
+            </div>
+          </a>
+        </div>      
+     
+        <div class="col-lg-4 col-sm-6">
+          <a class="portfolio-box" href="img/storyboard/fullsize/replyless.png">
+            <img style = "width:506.39px; height: 342px;"class="img-fluid" src="img/storyboard/thumbnails/replyless.png" alt="">
+            <div class="portfolio-box-caption">
+              <div class="project-category text-white-50">
+             	   PR 게시판
+              </div>
+              <div class="project-name">
+              	  댓글 접기
+              </div>
+            </div>
+          </a>
+        </div>      
+         
+        <div class="col-lg-4 col-sm-6">
+          <a class="portfolio-box" href="img/storyboard/fullsize/replyshow.png">
+            <img style = "width:506.39px; height: 342px;"class="img-fluid" src="img/storyboard/thumbnails/replyshow.png" alt="">
+            <div class="portfolio-box-caption">
+              <div class="project-category text-white-50">
+             	   PR 게시판
+              </div>
+              <div class="project-name">
+              	  댓글 보기
+              </div>
+            </div>
+          </a>
+        </div>      
+                 
+        <div class="col-lg-4 col-sm-6">
+          <a class="portfolio-box" href="img/storyboard/fullsize/comment.png">
+            <img style = "width:506.39px; height: 342px;"class="img-fluid" src="img/storyboard/thumbnails/comment.png" alt="">
+            <div class="portfolio-box-caption">
+              <div class="project-category text-white-50">
+             	   PR 게시판
+              </div>
+              <div class="project-name">
+              	  답글
+              </div>
+            </div>
+          </a>
+        </div>   
+                  
+        <div class="col-lg-4 col-sm-6">
+          <a class="portfolio-box" href="img/storyboard/fullsize/alram.png">
+            <img style = "width:506.39px; height: 342px;"class="img-fluid" src="img/storyboard/thumbnails/alram.png" alt="">
+            <div class="portfolio-box-caption">
+              <div class="project-category text-white-50">
+             	   알림
+              </div>
+              <div class="project-name">
+              	  실시간 알림 기능
+              </div>
+            </div>
+          </a>
+        </div>   
+               
+      </div>
+    </div>
+
+</section>
+  
+  <!-- Footer -->
+  <footer class="bg-light py-5">
+    <div class="container">
+      <div class="small text-center text-muted">Copyright &copy; 2020 - ChoHongCheol</div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/creative.min.js"></script>
+</div>
+</body>
+
+</html>
