@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>조홍철의 포트폴리오</title>
+  <title>강인욱의 포트폴리오</title>
   <link rel="SHORTCUT ICON" href="img/programmer.png"/>
 
   <!-- Font Awesome Icons -->
@@ -173,49 +173,6 @@ border-top: 2px solid #6CDAB2;
 }
 </style>
 
-<script type="text/javascript">
-$(document).ready(function() {
-	var typingBool = false; 
-	var typingIdx=0; 
-	var liIndex = 0;
-	var liLength = $(".typing-txt>ul>li").length;
-
-	// 타이핑될 텍스트를 가져온다 
-	var typingTxt = $(".typing-txt>ul>li").eq(liIndex).text(); 
-	typingTxt=typingTxt.split(""); // 한글자씩 자른다. 
-	if(typingBool==false){ // 타이핑이 진행되지 않았다면 
-	    typingBool=true; 
-	    var tyInt = setInterval(typing,280); // 반복동작 
-	} 
-	     
-	function typing(){ 
-	  if(typingIdx<typingTxt.length){ // 타이핑될 텍스트 길이만큼 반복 
-	     $(".typing").append(typingTxt[typingIdx]); // 한글자씩 이어준다. 
-	     typingIdx++; 
-	   } else{ //한문장이끝나면
-	     //다음문장으로.. 마지막문장이면 다시 첫번째 문장으로 
-	     if(liIndex>=liLength-1){
-	       liIndex=0;
-	     }else{
-	       liIndex++; 
-	     }
-	     
-	     //다음문장을 타이핑하기위한 셋팅
-	        typingIdx=0;
-	        typingBool = false; 
-	        typingTxt = $(".typing-txt>ul>li").eq(liIndex).text(); 
-	       
-	     //다음문장 타이핑전 1초 쉰다
-	         clearInterval(tyInt);
-	         setTimeout(function(){
-	            $(".typing").html('');
-	           tyInt = setInterval(typing,280);
-	         },1000);
-	    } 
-	}  
-});
-</script>
-
 </head>
 
 <body id="page-top">
@@ -223,7 +180,7 @@ $(document).ready(function() {
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
     <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="#page-top">CHong777</a>
+      <a class="navbar-brand js-scroll-trigger" href="#page-top">Kinuk97</a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -233,7 +190,7 @@ $(document).ready(function() {
             <a class="nav-link js-scroll-trigger" href="index.html">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#services">Semi Project</a>
+            <a class="nav-link js-scroll-trigger" href="#services">Project</a>
           </li>
          <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#portfolio">StoryBoard</a>
@@ -262,7 +219,7 @@ $(document).ready(function() {
   <section class="page-section" id="services" style="padding-top: 10px;">
    <div style="padding-bottom:5%">
    	 <hr class="divider my-4">
-      <h2 class="text-center mt-0">Semi Project</h2>
+      <h2 class="text-center mt-0">Project</h2>
       <hr class="divider my-4">
    </div>
      <div class="container" style="padding-bottom: 3%;">
@@ -270,19 +227,19 @@ $(document).ready(function() {
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="left_img">
-                            <img class="img-fluid" src="img/portfolio/thumbnails/messenger.png" alt="">
+                            <img class="img-fluid" src="img/portfolio/thumbnails/SANTA BOOKS.png" alt="">
                         </div>
                     </div>
                     <div class="offset-lg-1 col-lg-5">
                         <div class="portfolio_right_text mt-30">
-                            <h4 class="text-uppercase">SemiChat</h4>
+                            <h4 class="text-uppercase">SantaBooks</h4>
                             <p>
-                            	 메신저 플랫폼 통합 관리 시스템
+                            	책 정기 구독 배송, 웹소설, 리뷰 플랫폼
                             </p>
                             <ul class="list">
-                                <li><span>프로젝트 명</span>: SemiChat</li>
-                                <li><span>수행기간</span>: 2019년 10월 17일 ~ 2019년 12월 09일</li>
-                                <li><span>개발 목표</span>: 카카오톡, 라인, 페이스북 등 수많은 메신저가 속출하고 있는 시대에서 하나의 채팅 프로그램으로 여러 채팅 메신저들을 하나로 모아 관리하는 프로그램으로 상담원들의 업무 효율성을 높이는 것을 목표로 한다.</li>
+                                <li><span>프로젝트 명</span>: SantaBooks</li>
+                                <li><span>수행기간</span>: 2019년 12월 10일 ~ 2020년 01월 16일</li>
+                                <li><span>개발 목표</span>: 종이책 독서량은 줄어드는 반면 전자책 독서량은 증가하는 추세, 독서 장려를 위한 종이책 배송과 시공간 제약이 없는 전자책의 장점을 결합한 서비스 구현을 목표로 한다.</li>
                             </ul>
                         </div>
                     </div>
@@ -337,6 +294,25 @@ $(document).ready(function() {
 				      </td>
 				   </tr>
 				   <tr>
+				      <td style ="vertical-align: middle;">프레임워크</td>
+				      <td>
+				    	<ul style="list-style-type:square;">
+				      		<li>Spring Framework</li>
+				     	 </ul>
+				    	<ul style="list-style-type:square;">
+				      		<li>MyBatis Fraemwork</li>
+				     	 </ul>				     	 
+				      </td>
+				   </tr>
+				   <tr>
+				      <td style ="vertical-align: middle;">Spring-version</td>
+				      <td>
+				    	<ul style="list-style-type:square;">
+				      		<li>Spring Tools 3(Standalone Edition) 3.9.10 RELEASE</li>
+				     	 </ul>
+				      </td>
+				   </tr>
+				   <tr>
 				      <td style ="vertical-align: middle;">Language</td>
 				      <td>
 				    	<ul style="list-style-type:square;">
@@ -352,86 +328,106 @@ $(document).ready(function() {
 				     	 </ul>
 				      </td>
 				   </tr>
+				   <tr>
+				      <td style ="vertical-align: middle;">형상/버전관리</td>
+				      <td>
+				    	<ul style="list-style-type:square;">
+				      		<li>Github</li>
+				     	 </ul>
+						<ul style="list-style-type:square;">
+				      		<li>Eclipse-git</li>
+				     	</ul>				     	 
+				      </td>
+				   </tr>
 				 </tbody> 
 			</table>				
     </div><!-- CONTAINER -->
     
-       <div class="container" style="padding-bottom:20px">
-			<h3 class="text-heading title_color">구현기능</h3>
-			<table class="table table-striped">
-				 <thead>
-				   <tr>
-				      <th>구분</th>
-				      <th style ="padding-left: 35px;">항목</th>
-				   </tr>
-				 </thead>
-				 <tbody>
-				   <tr>
-				      <td style ="vertical-align: middle;">회원 서비스</td>
-				      <td>
-				    	<ul style="list-style-type:square;">
-				      		<li>로그인/ 로그아웃</li>
-				      		<li>ID&PW 찾기/ 회원가입</li>
-				      		<li>내가 쓴 글 보기</li>
-				      		<li>내 정보 수정</li>
-				      		<li>탈퇴 신청</li>
-				      		<li>가이드/ 통계</li>
-				     	 </ul>
-				      </td>
-				   </tr>
-				   <tr>
-				      <td style ="vertical-align: middle;">관리자 서비스</td>
-				      <td>
-				    	<ul style="list-style-type:square;">
-				      		<li>회원관리</li>
-				      		<li>게시판 관리(작성, 답변, 삭제)</li>
-				     	 </ul>
-				      </td>
-				   </tr>
-				   <tr>
-				      <td style ="vertical-align: middle;">기업매니저 서비스</td>
-				      <td>
-				    	<ul style="list-style-type:square;">
-				      		<li>상담원 관리</li>
-				      		<li>환경설정</li>
-				     	 </ul>
-				      </td>
-				   </tr>
-				   <tr>
-				      <td style ="vertical-align: middle;">메인 페이지</td>
-				      <td>
-				    	<ul style="list-style-type:square;">
-				      		<li>헤더/푸터/캐로셀</li>
-				     	 </ul>
-				      </td>
-				   </tr>
-				   <tr>
-				      <td style ="vertical-align: middle;">상담데스크</td>
-				      <td>
-				    	<ul style="list-style-type:square;">
-				      		<li>채팅 프로필 관리</li>
-				      		<li>채팅 전송 및 수신</li>
-				      		<li>고객 정보 보기</li>
-				      		<li>자주 쓰는 답변 선택</li>
-				     	 </ul>
-				      </td>
-				   </tr>
-				   <tr>
-				      <td style ="vertical-align: middle;">게시판</td>
-				      <td>
-				    	<ul style="list-style-type:square;">
-				      		<li>작성/ 수정/ 삭제</li>
-				      		<li>공개 여부 설정</li>
-				     	 </ul>
-				      </td>
-				   </tr>
-				 </tbody> 
-			</table>				
+    <div class="container" style="padding-bottom:20px">
+		<h3 class="text-heading title_color">구현기능</h3>
+		<table class="table table-striped">
+			 <thead>
+			   <tr>
+			      <th>구분</th>
+			      <th style ="padding-left: 35px;">항목</th>
+			   </tr>
+			 </thead>
+			 <tbody>
+			   <tr>
+			      <td style ="vertical-align: middle;">회원 서비스</td>
+			      <td>
+			    	<ul style="list-style-type:square;">
+			      		<li>로그인 / 로그아웃</li>
+			      		<li>회원가입 (메일인증)</li>
+			      		<li>구글 소셜 로그인</li>
+			      		<li>PW 찾기 (메일인증)</li>
+			      		<li>아이디 저장</li>
+			     	 </ul>
+			      </td>
+			   </tr>
+			   <tr>
+			      <td style ="vertical-align: middle;">리뷰 게시판</td>
+			      <td>
+			    	<ul style="list-style-type:square;">
+			      		<li>회원의 관심 장르로 책 추천</li>
+			      		<li>책의 리뷰 작성(공개여부 설정), 수정, 삭제</li>
+			      		<li>책 검색 (Naver API)</li>
+			      		<li>리뷰 정렬</li>
+			      		<li>좋아요 및 책에 대한 별점</li>
+			     	 </ul>
+			      </td>
+			   </tr>
+			  <tr>
+			      <td style ="vertical-align: middle;">정기 구독, 결제</td>
+			      <td>
+			    	<ul style="list-style-type:square;">
+			      		<li>결제 진행 (KG이니시스)</li>
+			      		<li>회원 정보 불러오기</li>
+			     	 </ul>
+			      </td>
+			   </tr>
+			   <tr>				   
+			      <td style ="vertical-align: middle;">웹소설</td>
+			      <td>
+			    	<ul style="list-style-type:square;">
+			      		<li>웹소설 작성, 수정, 삭제</li>
+			      		<li>웹소설 표지 업로드</li>
+			      		<li>소설 즐겨찾기</li>
+			      		<li>소설 검색</li>
+			      		<li>베스트 소설</li>
+			      		<li>댓글, 답글</li>
+			     	 </ul>
+			      </td>
+			   </tr>
+			   <tr>
+			      <td style ="vertical-align: middle;">마이페이지</td>
+			      <td>
+			    	<ul style="list-style-type:square;">
+			      		<li>회원정보 조회, 수정, 회원탈퇴</li>
+			      		<li>구독 정보 확인 및 구독 취소, 구독시 받은 책 확인</li>
+			      		<li>즐겨찾기 소설 확인</li>
+			      		<li>작성한 글, 리뷰, 댓글 확인</li>
+			     	 </ul>
+			      </td>
+			   </tr>
+			   <tr>
+			      <td style ="vertical-align: middle;">관리자 페이지</td>
+			      <td>
+			    	<ul style="list-style-type:square;">
+			      		<li>각 관리메뉴 최신 데이터 미리보기</li>
+			      		<li>회원관리, 게시글관리, 댓글관리, 배송관리, 도서관리</li>
+			      		<li>각 게시판 검색</li>
+			      		<li>도서 정보 추가, 상세보기 및 도서 정보 수정</li>
+			     	 </ul>
+			      </td>
+			   </tr>
+			 </tbody> 
+		</table>				
     </div><!-- CONTAINER -->
     
     <div class="container" style="padding-bottom:45px">
 			<h3 class="text-heading title_color">DB 설계</h3>
-			<img style = "width: 100%;" src="img/semiChatDB.png"/>
+			<img style = "width: 100%;" src="img/SantaBooksERD.png"/>
     </div><!-- CONTAINER -->
     <div class="container" style="padding-bottom:20px">
 			<h3 class="text-heading title_color">담당 역할</h3>
@@ -444,35 +440,36 @@ $(document).ready(function() {
 				 </thead>
 				 <tbody>
 				   <tr>
-				      <td style ="vertical-align: middle;">회원 서비스</td>
+				      <td style ="vertical-align: middle;">웹소설</td>
 				      <td>
 				      <ul style="list-style-type:square;">
-				      	<li>회원가입</li>
+				      	<li>작성, 수정, 삭제</li>
 				      </ul>
 				      <ul style="list-style-type:square;">
-				      	<li>ID&PW 찾기</li>
+				      	<li>베스트 소설</li>
+				      </ul>
+				      <ul style="list-style-type:square;">
+				      	<li>즐겨찾기</li>
+				      </ul>
+				      <ul style="list-style-type:square;">
+				      	<li>장르별 필터</li>
+				      </ul>
+				      <ul style="list-style-type:square;">
+				      	<li>검색</li>
 				      </ul>
 				      </td>
 				   </tr>
 				   <tr>
-				      <td style ="vertical-align: middle;">상담데스크</td>
+				      <td style ="vertical-align: middle;">에피소드</td>
 				      <td>
 				      <ul style="list-style-type:square;">
-				      	<li>상담데스크 채팅</li>
+				      	<li>회차 작성, 수정, 삭제</li>
 				      </ul>
 				      <ul style="list-style-type:square;">
-				      	<li>채팅 전송 및 수신 담당</li>
-				      </ul>
-				      </td>
-				   </tr>
-				   <tr>
-				      <td style ="vertical-align: middle;">기업매니저 서비스</td>
-				      <td>
-				      <ul style="list-style-type:square;">
-				      	<li>상담원 관리</li>
+				      	<li>회차 별점 기능</li>
 				      </ul>
 				      <ul style="list-style-type:square;">
-				      	<li>환경설정</li>
+				      	<li>댓글 / 답글</li>
 				      </ul>
 				      </td>
 				   </tr>
@@ -502,18 +499,12 @@ $(document).ready(function() {
 				      <td style ="vertical-align: middle;">기여도 : 25%(팀 구성원: 5명)</td>
 				      <td>
 				      <ul style="list-style-type:square;">
-				      	<li>회원 서비스, 상담데스크 채팅, 기업 매니저 서비스 구현</li>
+				      	<li>웹소설, 에피소드 게시판 구현</li>
 				      </ul>
 				      </td>
 				   </tr>
 				 </tbody> 
 			</table>				
-    </div><!-- CONTAINER -->
-  <div class="container">
-			<h3 class="text-heading title_color">참여소감</h3>
-			<p class="sample-text">
-				흥미로운 주제를 갖고 프로젝트를 성공적으로 완성해서 뿌듯했습니다. 채팅 플랫폼 5가지(카카오톡, 라인, 인스타그램, 페이스북 메신저, 위챗)를 실제 채팅 플랫폼을 이용하는 것이 아니라 저희가 직접 구현한 채팅 프로그램을 이용하여 메신저 통합 관리 시스템을 만들었기 때문에, 다음번에는 실제 채팅 플랫폼을 사용하여 개발하고 싶다는 생각이 들었습니다. 또한, 기획, 설계, 구현까지의 여러 단계를 거쳐 팀원들과 함께 작업하면서 기술적인 부분과 커뮤니케이션 부분에서 성장할 수 있었다는 점에서 매우 중요한 경험을 했다고 생각합니다.
-			</p>
     </div><!-- CONTAINER -->
   </section>
   
@@ -525,212 +516,146 @@ $(document).ready(function() {
 
     <div class="container-fluid p-0">
       <div class="row no-gutters">
+      
         <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="img/storyboard/fullsize/join.png">
-            <img style = "height: 342px;" class="img-fluid" src="img/storyboard/thumbnails/join.png" alt="">
+          <a class="portfolio-box" href="img/storyboard/fullsize/novel_list.png">
+            <img style = "height: 342px;" class="img-fluid" src="img/storyboard/thumbnails/novel_list.png" alt="">
             <div class="portfolio-box-caption">
               <div class="project-category text-white-50">
-                	회원 서비스
+                	웹소설
               </div>
               <div class="project-name">
-                	회원가입
+                	소설 목록
               </div>
             </div>
           </a>
         </div>
+      
         <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="img/storyboard/fullsize/joinmail.png">
-            <img style = "height: 342px;" class="img-fluid" src="img/storyboard/thumbnails/joinmail.png" alt="">
+          <a class="portfolio-box" href="img/storyboard/fullsize/novel_write.png">
+            <img style = "height: 342px;" class="img-fluid" src="img/storyboard/thumbnails/novel_write.png" alt="">
             <div class="portfolio-box-caption">
               <div class="project-category text-white-50">
-               	 회원 서비스
+                	웹소설
               </div>
               <div class="project-name">
-                	이메일 전송
+                	소설 등록
               </div>
             </div>
           </a>
         </div>
+      
         <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="img/storyboard/fullsize/emailcheck.png">
-            <img style = "height: 342px;"class="img-fluid" src="img/storyboard/thumbnails/emailcheck.png" alt="">
+          <a class="portfolio-box" href="img/storyboard/fullsize/novel_modify.png">
+            <img style = "height: 342px;" class="img-fluid" src="img/storyboard/thumbnails/novel_modify.png" alt="">
             <div class="portfolio-box-caption">
               <div class="project-category text-white-50">
-                	회원 서비스
+                	웹소설
               </div>
               <div class="project-name">
-              		  이메일 인증
+                	소설 수정
               </div>
             </div>
           </a>
         </div>
+      
         <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="img/storyboard/fullsize/findid.png">
-            <img style = "width:506.39px; height: 342px;"class="img-fluid" src="img/storyboard/thumbnails/findid.png" alt="">
+          <a class="portfolio-box" href="img/storyboard/fullsize/episode_list.png">
+            <img style = "height: 342px;" class="img-fluid" src="img/storyboard/thumbnails/episode_list.png" alt="">
             <div class="portfolio-box-caption">
               <div class="project-category text-white-50">
-             	   회원 서비스
+                	에피소드
               </div>
               <div class="project-name">
-              	  아이디 찾기
-              </div>
-            </div>
-          </a>
-        </div>
-        
-        <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="img/storyboard/fullsize/idmail.png">
-            <img style = "width:506.39px; height: 342px;"class="img-fluid" src="img/storyboard/thumbnails/idmail.png" alt="">
-            <div class="portfolio-box-caption">
-              <div class="project-category text-white-50">
-             	   회원 서비스
-              </div>
-              <div class="project-name">
-              	  아이디 메일 전송
-              </div>
-            </div>
-          </a>
-        </div>
-        
-       <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="img/storyboard/fullsize/findpw.png">
-            <img style = "width:506.39px; height: 342px;"class="img-fluid" src="img/storyboard/thumbnails/findpw.png" alt="">
-            <div class="portfolio-box-caption">
-              <div class="project-category text-white-50">
-             	   회원 서비스
-              </div>
-              <div class="project-name">
-              	  비밀번호 찾기
+                	에피소드 목록
               </div>
             </div>
           </a>
         </div>
         
         <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="img/storyboard/fullsize/pwmail.png">
-            <img style = "width:506.39px; height: 342px;"class="img-fluid" src="img/storyboard/thumbnails/pwmail.png" alt="">
+          <a class="portfolio-box" href="img/storyboard/fullsize/episode_write.png">
+            <img style = "height: 342px;" class="img-fluid" src="img/storyboard/thumbnails/episode_write.png" alt="">
             <div class="portfolio-box-caption">
               <div class="project-category text-white-50">
-             	   회원 서비스
+                	에피소드
               </div>
               <div class="project-name">
-              	  임시비밀번호 메일 전송
+                	에피소드 작성
               </div>
             </div>
           </a>
-        </div>        
-
-        <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="img/storyboard/fullsize/facebook.png">
-            <img style = "width:506.39px; height: 342px;"class="img-fluid" src="img/storyboard/thumbnails/facebook.png" alt="">
-            <div class="portfolio-box-caption">
-              <div class="project-category text-white-50">
-             	   상담 데스크
-              </div>
-              <div class="project-name">
-              	  페이스북 메신저를 통한 상담 요청
-              </div>
-            </div>
-          </a>
-        </div>   
+        </div>
         
         <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="img/storyboard/fullsize/chat.png">
-            <img style = "width:506.39px; height: 342px;"class="img-fluid" src="img/storyboard/thumbnails/chat.png" alt="">
+          <a class="portfolio-box" href="img/storyboard/fullsize/episode_modify.png">
+            <img style = "height: 342px;" class="img-fluid" src="img/storyboard/thumbnails/episode_modify.png" alt="">
             <div class="portfolio-box-caption">
               <div class="project-category text-white-50">
-             	   상담 데스크
+                	에피소드
               </div>
               <div class="project-name">
-              	  고객과의 상담
+                	에피소드 수정
               </div>
             </div>
           </a>
-        </div>  
-                
+        </div>
+        
         <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="img/storyboard/fullsize/managerconfirm.png">
-            <img style = "width:506.39px; height: 342px;"class="img-fluid" src="img/storyboard/thumbnails/managerconfirm.png" alt="">
+          <a class="portfolio-box" href="img/storyboard/fullsize/episode_view.png">
+            <img style = "height: 342px;" class="img-fluid" src="img/storyboard/thumbnails/episode_view.png" alt="">
             <div class="portfolio-box-caption">
               <div class="project-category text-white-50">
-             	   기업매니저 서비스
+                	에피소드
               </div>
               <div class="project-name">
-              	  상담데스크 이용 제한
+                	에피소드 상세보기
               </div>
             </div>
           </a>
-        </div>  
-
+        </div>
+        
         <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="img/storyboard/fullsize/answeradd.png">
-            <img style = "width:506.39px; height: 342px;"class="img-fluid" src="img/storyboard/thumbnails/answeradd.png" alt="">
+          <a class="portfolio-box" href="img/storyboard/fullsize/reply.png">
+            <img style = "height: 342px;" class="img-fluid" src="img/storyboard/thumbnails/reply.png" alt="">
             <div class="portfolio-box-caption">
               <div class="project-category text-white-50">
-             	   기업매니저 서비스
+                	댓글 / 답글
               </div>
               <div class="project-name">
-              	  자주쓰는 답변 등록
+                	에피소드 댓글 정렬 / 댓글
               </div>
             </div>
           </a>
-        </div>  
-
+        </div>
+        
         <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="img/storyboard/fullsize/answerdel.png">
-            <img style = "width:506.39px; height: 342px;"class="img-fluid" src="img/storyboard/thumbnails/answerdel.png" alt="">
+          <a class="portfolio-box" href="img/storyboard/fullsize/reply_modify.png">
+            <img style = "height: 342px;" class="img-fluid" src="img/storyboard/thumbnails/reply_modify.png" alt="">
             <div class="portfolio-box-caption">
               <div class="project-category text-white-50">
-             	   기업매니저 서비스
+                	댓글 / 답글
               </div>
               <div class="project-name">
-              	  자주쓰는 답변 삭제
+                	에피소드 댓글 작성 / 수정
               </div>
             </div>
           </a>
-        </div>  
-
+        </div>
+        
         <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="img/storyboard/fullsize/search.png">
-            <img style = "width:506.39px; height: 342px;"class="img-fluid" src="img/storyboard/thumbnails/search.png" alt="">
+          <a class="portfolio-box" href="img/storyboard/fullsize/reply_reply.png">
+            <img style = "height: 342px;" class="img-fluid" src="img/storyboard/thumbnails/reply_reply.png" alt="">
             <div class="portfolio-box-caption">
               <div class="project-category text-white-50">
-             	   기업매니저 서비스
+                	댓글 / 답글
               </div>
               <div class="project-name">
-              	  상담원 조회
+                	답글 작성
               </div>
             </div>
           </a>
-        </div>  
-
-        <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="img/storyboard/fullsize/agree.png">
-            <img style = "width:506.39px; height: 342px;"class="img-fluid" src="img/storyboard/thumbnails/agree.png" alt="">
-            <div class="portfolio-box-caption">
-              <div class="project-category text-white-50">
-             	   기업매니저 서비스
-              </div>
-              <div class="project-name">
-              	  상담원 승인
-              </div>
-            </div>
-          </a>
-        </div>  
-
-        <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="img/storyboard/fullsize/withdrawal.png">
-            <img style = "width:506.39px; height: 342px;"class="img-fluid" src="img/storyboard/thumbnails/withdrawal.png" alt="">
-            <div class="portfolio-box-caption">
-              <div class="project-category text-white-50">
-             	   기업매니저 서비스
-              </div>
-              <div class="project-name">
-              	  상담원 탈퇴 처리
-              </div>
-            </div>
-          </a>
-        </div>   
+        </div>
         
       </div>
     </div>
@@ -740,7 +665,7 @@ $(document).ready(function() {
   <!-- Footer -->
   <footer class="bg-light py-5">
     <div class="container">
-      <div class="small text-center text-muted">Copyright &copy; 2020 - ChoHongCheol</div>
+      <div class="small text-center text-muted">Copyright &copy; 2020 - KangInUk</div>
     </div>
   </footer>
 
